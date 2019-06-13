@@ -39,12 +39,19 @@ const server = require('./api/server.js');
 const port = process.env.PORT || 5000;
 server.listen(port, () => console.log(`\n** Running on port ${port} **\n`));
 ```
-7. Create empty data folder
-8. npx knex migrate:make create_x_table -- create your tables
-9. Go into migrations and work on each of the files
-10. npx knex migrate:latest
-11. npx knex seed:make 001-dishes – create all seeds
-12.	npx knex seed:run
-13. Create dbConfig.js in database folder
-14.	Create x-model.js in x folder
-15.	Create auth folder
+7. npx knex migrate:make create_x_table -- create your tables
+8. Go into migrations and work on each of the tables
+9. npx knex migrate:latest
+10. npx knex seed:make 001-dishes – create all seeds if needed
+11.	npx knex seed:run
+12. Create dbConfig.js in database folder
+```
+const knex = require('knex');
+
+const knexConfig = require('../knexfile.js');
+
+module.exports = knex(knexConfig.development);
+
+```
+13.	Create x-model.js in x folder
+14.	Create auth folder
