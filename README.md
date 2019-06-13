@@ -51,7 +51,6 @@ const knex = require('knex');
 const knexConfig = require('../knexfile.js');
 
 module.exports = knex(knexConfig.development);
-
 ```
 13.	Create x-model.js in x folder
 14.	Create auth folder
