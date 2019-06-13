@@ -42,7 +42,7 @@ server.listen(port, () => console.log(`\n** Running on port ${port} **\n`));
 7. npx knex migrate:make create_x_table  --  *to create your tables*
 8. Go into migrations and work on each of the tables
 9. npx knex migrate:latest
-10. npx knex seed:make 001-dishes  --  *to create all seeds if needed*
+10. npx knex seed:make 001-dishes  --  *to create seeds if needed*
 11.	npx knex seed:run
 12. Create dbConfig.js in database folder
 ```
