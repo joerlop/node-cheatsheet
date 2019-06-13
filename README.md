@@ -9,7 +9,13 @@
 3. yarn add nodemon express helmet knex sqlite3 cors bcryptjs express-session connect-session-knex jsonwebtoken
 4. npx knex init
 5. Update development in knexfile.js
-6. Create index.js file
+6. Create index.js file:
+```
+const server = require('./api/server.js');
+
+const port = process.env.PORT || 5000;
+server.listen(port, () => console.log(`\n** Running on port ${port} **\n`));
+```
 7. Create empty data folder
 8. npx knex migrate:make create_x_table -- create your tables
 9. Go into migrations and work on each of the files
