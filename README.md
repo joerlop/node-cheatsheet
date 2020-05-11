@@ -47,10 +47,11 @@ server.listen(port, () => console.log(`\n** Running on port ${port} **\n`));
 12. Create dbConfig.js in database folder
 ```
 const knex = require('knex');
+const config = require('../knexfile.js');
 
-const knexConfig = require('../knexfile.js');
-
-module.exports = knex(knexConfig.development);
+const environment = process.env.DB_ENV || "development";
+  
+module.exports = knex(config[environment]);
 ```
 13.	Create x-model.js in x folder
 14.	Create auth folder
